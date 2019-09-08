@@ -1,8 +1,8 @@
 name: flutter_multi_crypto_exchange
 description: Integrate cryprocurrency exchange platforms and convert them into the same standard format.
 version: 1.0.1
-author:
-homepage:
+author: benznest <benz7net@gmailcom>
+homepage: https://github.com/benznest/flutter_multi_crypto_exchange
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
@@ -11,8 +11,8 @@ dependencies:
   flutter:
     sdk: flutter
 
-  flutter_bitkub_exchange: 1.0.1
-  flutter_satang_pro_exchange: 1.1.0
+  flutter_bitkub_exchange: ^1.0.1
+  flutter_satang_pro_exchange: ^1.1.0
 
 dev_dependencies:
   flutter_test:
