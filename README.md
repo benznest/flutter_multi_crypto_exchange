@@ -85,9 +85,11 @@ Get portfolio that build from multi-exchanges.
 ```
 
 In Example, I have
-0.0004 BTC , 193 THB , 116 XZC , in Satang Pro.
-0.171 BTC , 4 THB , 4.61 ETH , in Bitkub.
+0.0004 BTC , 193 THB , 116 XZC in Satang Pro.
+and 0.171 BTC , 4 THB , 4.61 ETH in Bitkub.
 
+You will receive the remaining balance of each exchange. 
+And combined into a portfolio. It also separates the amount of each exchange according to currency.
 
 ```json
 {
