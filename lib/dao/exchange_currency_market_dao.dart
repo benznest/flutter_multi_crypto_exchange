@@ -45,10 +45,11 @@ class ExchangeCurrencyMarketDao {
     quoteVolume = satang.quoteVolume;
   }
 
+  /// Bitkub example pair is THB_ETH , primary is THB and secondary is ETH.
   ExchangeCurrencyMarketDao.fromBitkub(BitkubPairCurrencyDataDao bitkub) {
     List<String> pair = bitkub.pairName.split("_");
-    primaryCurrency = pair[1];
-    secondaryCurrency = pair[0];
+    primaryCurrency = pair[0];
+    secondaryCurrency = pair[1];
     avg24hr = (bitkub.high24hr + bitkub.low24hr) / 2;
     baseVolume = bitkub.baseVolume;
     high24hr = bitkub.high24hr;

@@ -12,7 +12,7 @@ Add dependencies in pubspec.yaml
 
 ```bash
 dependencies:
-    flutter_multi_crypto_exchange: 1.0.0
+    flutter_multi_crypto_exchange: 1.0.1
 ```
 
 ## Usage
