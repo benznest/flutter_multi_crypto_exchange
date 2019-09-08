@@ -30,7 +30,8 @@ class ExchangeCurrencyMarketDao {
       this.percentChange,
       this.quoteVolume});
 
-  ExchangeCurrencyMarketDao.fromSatangMarket(SatangProMarketCapCurrencyDao satang) {
+  ExchangeCurrencyMarketDao.fromSatangMarket(
+      SatangProMarketCapCurrencyDao satang) {
     primaryCurrency = satang.currencyPair.primaryCurrency;
     secondaryCurrency = satang.currencyPair.secondaryCurrency;
     avg24hr = satang.avg24hr;
@@ -44,8 +45,19 @@ class ExchangeCurrencyMarketDao {
     quoteVolume = satang.quoteVolume;
   }
 
-  ExchangeCurrencyMarketDao.fromBitkub(BitkubPairCurrencyDataDao bitkub){
-    primaryCurrency = bitkub.pairName
+  ExchangeCurrencyMarketDao.fromBitkub(BitkubPairCurrencyDataDao bitkub) {
+    List<String> pair = bitkub.pairName.split("_");
+    primaryCurrency = pair[1];
+    secondaryCurrency = pair[0];
+    avg24hr = (bitkub.high24hr + bitkub.low24hr) / 2;
+    baseVolume = bitkub.baseVolume;
+    high24hr = bitkub.high24hr;
+    highestBid = bitkub.highestBid;
+    lastPrice = bitkub.last;
+    low24hr = bitkub.low24hr;
+    lowestAsk = bitkub.lowestAsk;
+    percentChange = bitkub.percentChange;
+    quoteVolume = bitkub.quoteVolume;
   }
 
   Map<String, dynamic> toJson() {
@@ -63,6 +75,4 @@ class ExchangeCurrencyMarketDao {
       "quoteVolume": this.quoteVolume,
     };
   }
-
-
 }

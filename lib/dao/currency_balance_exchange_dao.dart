@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_crypto_portfolio_core/dao/currency_balance_dao.dart';
+import 'package:flutter_multi_crypto_exchange/dao/currency_balance_dao.dart';
 
 class CurrencyBalanceExchangeDao {
   String currency;

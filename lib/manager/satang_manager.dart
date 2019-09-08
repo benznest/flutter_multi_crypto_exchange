@@ -1,7 +1,7 @@
-import 'package:flutter_crypto_portfolio_core/dao/exchange_dao.dart';
-import 'package:flutter_crypto_portfolio_core/dao/currency_balance_dao.dart';
-import 'package:flutter_crypto_portfolio_core/dao/exchange_currency_market_dao.dart';
-import 'package:flutter_crypto_portfolio_core/manager/exchange_platform.dart';
+import 'package:flutter_multi_crypto_exchange/dao/exchange_dao.dart';
+import 'package:flutter_multi_crypto_exchange/dao/currency_balance_dao.dart';
+import 'package:flutter_multi_crypto_exchange/dao/exchange_currency_market_dao.dart';
+import 'package:flutter_multi_crypto_exchange/manager/exchange_platform.dart';
 import 'package:flutter_satang_pro_exchange/dao/satang_pro_market_cap_currency_dao.dart';
 import 'package:flutter_satang_pro_exchange/dao/user_information/satang_pro_user_information_dao.dart';
 import 'package:flutter_satang_pro_exchange/dao/wallets/satang_pto_wallet_dao.dart';

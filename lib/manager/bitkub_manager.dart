@@ -4,10 +4,10 @@ import 'package:flutter_bitkub_exchange/dao/balance/bitkub_currency_balance_dao.
 import 'package:flutter_bitkub_exchange/dao/balance/bitkub_wallet_balance_dao.dart';
 import 'package:flutter_bitkub_exchange/dao/market_ticker/bitkub_market_ticker_dao.dart';
 import 'package:flutter_bitkub_exchange/dao/market_ticker/bitkub_pair_currency_data_dao.dart';
-import 'package:flutter_crypto_portfolio_core/dao/exchange_currency_market_dao.dart';
-import 'package:flutter_crypto_portfolio_core/dao/exchange_dao.dart';
-import 'package:flutter_crypto_portfolio_core/dao/currency_balance_dao.dart';
-import 'package:flutter_crypto_portfolio_core/manager/exchange_platform.dart';
+import 'package:flutter_multi_crypto_exchange/dao/exchange_currency_market_dao.dart';
+import 'package:flutter_multi_crypto_exchange/dao/exchange_dao.dart';
+import 'package:flutter_multi_crypto_exchange/dao/currency_balance_dao.dart';
+import 'package:flutter_multi_crypto_exchange/manager/exchange_platform.dart';
 
 class BitkubManager {
   static List<CurrencyBalanceDao> toCurrencyBalance(
@@ -49,7 +49,7 @@ class BitkubManager {
     List<ExchangeCurrencyMarketDao> listMarketCap = List();
     BitkubMarketTickerDao response = await service.fetchMarketTicker();
     for(BitkubPairCurrencyDataDao marketBitkub in response.list){
-      listMarketCap.add(ExchangeCurrencyMarketDao.());
+      listMarketCap.add(ExchangeCurrencyMarketDao.fromBitkub(marketBitkub));
     }
     return listMarketCap;
   }

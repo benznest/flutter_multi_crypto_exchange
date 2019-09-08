@@ -1,20 +1,20 @@
 import 'package:flutter_bitkub_exchange/bitkub_exchange.dart';
 import 'package:flutter_bitkub_exchange/dao/api_key/bitkub_api_key.dart';
-import 'package:flutter_crypto_portfolio_core/dao/exchange_currency_market_dao.dart';
-import 'package:flutter_crypto_portfolio_core/dao/multi_crypto_market_dao.dart';
-import 'package:flutter_crypto_portfolio_core/manager/bitkub_manager.dart';
-import 'package:flutter_crypto_portfolio_core/dao/crypto_portfolio_dao.dart';
-import 'package:flutter_crypto_portfolio_core/manager/exchange_platform.dart';
-import 'package:flutter_crypto_portfolio_core/manager/satang_manager.dart';
+import 'package:flutter_multi_crypto_exchange/manager/exchange_platform.dart';
+import 'package:flutter_multi_crypto_exchange/dao/exchange_currency_market_dao.dart';
+import 'package:flutter_multi_crypto_exchange/dao/multi_crypto_market_dao.dart';
+import 'package:flutter_multi_crypto_exchange/manager/bitkub_manager.dart';
+import 'package:flutter_multi_crypto_exchange/dao/crypto_portfolio_dao.dart';
+import 'package:flutter_multi_crypto_exchange/manager/satang_manager.dart';
 import 'package:flutter_satang_pro_exchange/dao/api_key/satang_pro_api_key.dart';
 import 'package:flutter_satang_pro_exchange/satang_pro_exchange.dart';
 
-class CryptoPortfolioCore {
+class MultiCryptoExchange {
   bool hideEmptyCoin = true;
   SatangProExchangeService satangService;
   BitkubExchangeService bitkubService;
 
-  CryptoPortfolioCore(
+  MultiCryptoExchange(
       {this.hideEmptyCoin = true, this.satangService, this.bitkubService}) {
     satangService = satangService ?? SatangProExchangeService();
     bitkubService = bitkubService ?? BitkubExchangeService();
@@ -64,13 +64,14 @@ class CryptoPortfolioCore {
 
     /// Fetch balance Satang.
     if (satangService != null) {
-      multiMarket.marketcap[ExchangePlatform.SATANG_NAME] = await SatangManager.buildMarket(satangService);
+      multiMarket.marketcap[ExchangePlatform.SATANG_NAME] =
+          await SatangManager.buildMarket(satangService);
     }
 
     /// Fetch balance Bitkub.
     if (bitkubService != null) {
       multiMarket.marketcap[ExchangePlatform.BITKUB_NAME] =
-          BitkubManager.buildMarket();
+          await BitkubManager.buildMarket(bitkubService);
     }
 
     return multiMarket;

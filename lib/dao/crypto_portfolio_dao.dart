@@ -1,7 +1,7 @@
-import 'package:flutter_crypto_portfolio_core/dao/crypto_portfolio_exchange_dao.dart';
-import 'package:flutter_crypto_portfolio_core/dao/currency_balance_dao.dart';
-import 'package:flutter_crypto_portfolio_core/dao/currency_balance_exchange_dao.dart';
-import 'package:flutter_crypto_portfolio_core/manager/exchange_platform.dart';
+import 'package:flutter_multi_crypto_exchange/dao/crypto_portfolio_exchange_dao.dart';
+import 'package:flutter_multi_crypto_exchange/dao/currency_balance_dao.dart';
+import 'package:flutter_multi_crypto_exchange/dao/currency_balance_exchange_dao.dart';
+import 'package:flutter_multi_crypto_exchange/manager/exchange_platform.dart';
 
 import 'exchange_dao.dart';
 

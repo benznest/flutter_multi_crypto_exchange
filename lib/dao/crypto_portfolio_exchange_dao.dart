@@ -1,5 +1,5 @@
-import 'package:flutter_crypto_portfolio_core/dao/exchange_dao.dart';
-import 'package:flutter_crypto_portfolio_core/manager/exchange_platform.dart';
+import 'package:flutter_multi_crypto_exchange/dao/exchange_dao.dart';
+import 'package:flutter_multi_crypto_exchange/manager/exchange_platform.dart';
 
 //class CryptoPortfolioExchangeDao {
 //  Map<String, ExchangeDao> items;
