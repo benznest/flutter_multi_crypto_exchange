@@ -4,27 +4,41 @@ import 'package:flutter_multi_crypto_exchange/dao/crypto_portfolio_dao.dart';
 import 'package:flutter_multi_crypto_exchange_example/my_utils.dart';
 import 'package:flutter_bitkub_exchange/dao/api_key/bitkub_api_key.dart';
 import 'package:flutter_satang_pro_exchange/dao/api_key/satang_pro_api_key.dart';
+
 import 'package:flutter_multi_crypto_exchange/dao/multi_crypto_market_dao.dart';
+import 'package:flutter_multi_crypto_exchange/manager/exchange_platform.dart';
+import 'package:flutter_multi_crypto_exchange/dao/exchange_currency_market_dao.dart';
 
 Future main() async {
-  MultiCryptoExchange mc = MultiCryptoExchange(hideEmptyCoin: true);
+  MultiCryptoExchange mc = MultiCryptoExchange();
 
   // initial API key.
   mc.initSatang(
+      userId: 1234,  // your user id.
       keyReading: SatangProApiKey(
-          apiKey: "live-bb7004c453c747dab95fe8b16d5c9a5e",
-          secret: "b34a2Mr3RAqAkHcwnC+OTDeigz71VEFGsYTxtY+limA="));
+          apiKey: "...",
+          secret: "..."));
   mc.initBitkub(
       keyReading: BitkubApiKey(
-          apiKey: "9b18f5aa04960aeb61ef6c73c7f31ee7",
-          secret: "80dd1e3a67a2121178d429d88260af12"));
+          apiKey: "...",
+          secret: "..."));
 
   // build portfolio.
   CryptoPortfolioDao portfolio = await mc.getPortfolio();
   printPrettyJson(portfolio.toJson());
 
   // build multi-market.
-  MultiCryptoMarketDao market = await mc.getMarket();
+  MultiCryptoMarketDao market = await mc.getMultiMarkets();
+  List<ExchangeCurrencyMarketDao> listMarketSatang = market.marketcap[ExchangePlatform.SATANG_PRO];
+  List<ExchangeCurrencyMarketDao> listMarketBitkub = market.marketcap[ExchangePlatform.BITKUB];
+  for(var coin in listMarketSatang){
+    // coin.percentChange;
+    // coin.lastPrice;
+    // coin.primaryCurrency;
+    // coin.secondaryCurrency;
+    // coin.avg24hr;
+    // coin.baseVolume;
+  }
   printPrettyJson(market.toJson());
 
   runApp(MyApp());

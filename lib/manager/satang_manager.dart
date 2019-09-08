@@ -9,7 +9,7 @@ import 'package:flutter_satang_pro_exchange/satang_pro_exchange.dart';
 import 'package:flutter_satang_pro_exchange/satang_pro_utils.dart';
 
 class SatangManager {
-  static const String EXCHANGE_NAME = ExchangePlatform.SATANG_NAME;
+  static const String EXCHANGE_NAME = ExchangePlatform.SATANG_PRO;
 
   static List<CurrencyBalanceDao> toCurrencyBalance(
       List<SatangProWalletDao> listBalanceSatang,

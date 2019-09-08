@@ -32,7 +32,7 @@ class BitkubManager {
       {bool hideEmptyCoin = true}) async {
     BitkubWalletBalanceDao response = await service.fetchWalletBalance();
     ExchangeDao exchange =
-        ExchangeDao(exchangeName: ExchangePlatform.BITKUB_NAME);
+        ExchangeDao(exchangeName: ExchangePlatform.BITKUB);
     if (response.isError()) {
       exchange.errorMessage = response.errorMessage;
     } else {

@@ -1,7 +1,7 @@
 
 class ExchangePlatform {
-  static const String SATANG_NAME = "satang";
-  static const String BITKUB_NAME = "bitkub";
+  static const String SATANG_PRO = "satang";
+  static const String BITKUB = "bitkub";
 
-  static List<String> exchanges = [SATANG_NAME, BITKUB_NAME];
+  static List<String> exchanges = [SATANG_PRO, BITKUB];
 }

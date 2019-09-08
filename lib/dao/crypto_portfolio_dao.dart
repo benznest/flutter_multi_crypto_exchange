@@ -31,10 +31,10 @@ class CryptoPortfolioDao {
   buildPortfolio() {
     portfolio = List();
     Map<String, List<CurrencyBalanceDao>> mapListBalanceExchanges = {
-      ExchangePlatform.SATANG_NAME:
-          exchanges[ExchangePlatform.SATANG_NAME].balance,
-      ExchangePlatform.BITKUB_NAME:
-          exchanges[ExchangePlatform.BITKUB_NAME].balance,
+      ExchangePlatform.SATANG_PRO:
+          exchanges[ExchangePlatform.SATANG_PRO].balance,
+      ExchangePlatform.BITKUB:
+          exchanges[ExchangePlatform.BITKUB].balance,
     };
 
     mapListBalanceExchanges
