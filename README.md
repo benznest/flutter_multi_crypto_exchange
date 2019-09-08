@@ -52,9 +52,9 @@ Initial your API Key for fetch the balances.
           secret: "yoursecret"));
 ```
 
-## Get Market.
+## Get Market
 
-Get multi-markets, last price, percent change, volume, etc.
+Get ticker from multi-markets, last price, percent change, volume, etc.
 
 ```dart
   // import 'package:flutter_multi_crypto_exchange/dao/multi_crypto_market_dao.dart';
@@ -73,12 +73,12 @@ Get multi-markets, last price, percent change, volume, etc.
       // coin.secondaryCurrency;
       // coin.avg24hr;
       // coin.baseVolume;
-    }
+   }
 ```
 
 ## Get portfolio
 
-Get portfolio that build from multi-exchanges.
+Get portfolio from multi-exchanges.
 
 ```dart
   var portfolio = await mc.getPortfolio();
