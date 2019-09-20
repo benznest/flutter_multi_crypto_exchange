@@ -26,4 +26,9 @@ class CurrencyBalanceExchangeDao {
       "balanceEachExchanges":this.balanceEachExchanges
     };
   }
+
+
+  double get total {
+    return order + available + reserved;
+  }
 }
